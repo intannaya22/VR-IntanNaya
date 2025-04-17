@@ -62,12 +62,12 @@
       <!-- Busur Penalti Kanan -->
       <a-ring position="0 0.02 36" rotation="-90 180 0" radius-inner="8.9" radius-outer="9" theta-start="310" theta-length="100" color="white"></a-ring>
 
-        <!-- Bola Bergerak Maju ke Gawang Kanan -->
-        <a-entity gltf-model="assets/models/bola.glb" 
-                scale="0.005 0.005 0.005" 
-                position="0 0.5 0"
-                animation="property: position; to: 0 0.5 50; dur: 4000; easing: linear; loop: true"
-                sound="src: url(assets/suara/sorakan.mp3); on: animationcomplete;">
+        <!-- Bola Diam dan bisa di klik -->
+        <a-entity id="bola" class="clickable"
+          gltf-model="assets/models/bola.glb"
+          scale="0.005 0.005 0.005"
+          position="0 0.5 0">
+          <a-sound id="cheerSound" src="assets/suara/sorakan.mp3"></a-sound>
         </a-entity>
 
       <!-- Gawang Kiri -->
@@ -82,82 +82,53 @@
       <a-entity gltf-model="assets/models/bendera-corner.glb" scale="0.5 0.5 0.5" position="-34 2 52.5"></a-entity>
       <a-entity gltf-model="assets/models/bendera-corner.glb" scale="0.5 0.5 0.5" position="34 2 52.5"></a-entity>
 
-        <!-- Pemain Tim Merah -->
-        <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="-10 0 -20"
-                animation="property: position; to: -2 0 10; dur: 4000; dir: alternate; loop: true; easing: linear"></a-entity>
+      <!-- Pemain Tim Merah -->
+      <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="-10 0 -20"
+              animation="property: position; to: -2 0 10; dur: 4000; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="10 0 -25"
-                animation="property: position; to: 5 0 8; dur: 4500; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="10 0 -25"
+              animation="property: position; to: 5 0 8; dur: 4500; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="-5 0 -30"
-                animation="property: position; to: -3 0 5; dur: 5000; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="-5 0 -30"
+              animation="property: position; to: -3 0 5; dur: 5000; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="5 0 -35"
-                animation="property: position; to: 4 0 3; dur: 4200; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="5 0 -35"
+              animation="property: position; to: 4 0 3; dur: 4200; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="0 0 -40"
-                animation="property: position; to: 1 0 2; dur: 4600; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang-1.glb" scale="0.015 0.015 0.015" position="0 0 -40"
+              animation="property: position; to: 1 0 2; dur: 4600; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <!-- Pemain Tim Biru -->
-        <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="-10 0 20"
-                animation="property: position; to: -15 0 10; dur: 4000; dir: alternate; loop: true; easing: linear"></a-entity>
+      <!-- Pemain Tim Biru -->
+      <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="-10 0 20"
+              animation="property: position; to: -15 0 10; dur: 4000; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="10 0 25"
-                animation="property: position; to: 15 0 12; dur: 4500; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="10 0 25"
+              animation="property: position; to: 15 0 12; dur: 4500; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="-5 0 30"
-                animation="property: position; to: -8 0 15; dur: 5000; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="-5 0 30"
+              animation="property: position; to: -8 0 15; dur: 5000; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="5 0 35"
-                animation="property: position; to: 8 0 17; dur: 4200; dir: alternate; loop: true; easing: linear"></a-entity>
+      <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="5 0 35"
+              animation="property: position; to: 8 0 17; dur: 4200; dir: alternate; loop: true; easing: linear"></a-entity>
 
-        <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="0 0 40"
-                animation="property: position; to: 0 0 20; dur: 4600; dir: alternate; loop: true; easing: linear"></a-entity>
-
+      <a-entity gltf-model="assets/models/orang_2.glb" scale="1 1 1" position="0 0 40"
+              animation="property: position; to: 0 0 20; dur: 4600; dir: alternate; loop: true; easing: linear"></a-entity>
 
       <!-- Tribun Penonton -->
-        <!-- Kiri Depan -->
-        <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="-40 0 -30" rotation="0 90 0"></a-entity>
-
-        <!-- Kiri Belakang -->
-        <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="-40 0 30" rotation="0 90 0"></a-entity>
-
-        <!-- Kanan Depan -->
-        <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="40 0 -30" rotation="0 -90 0"></a-entity>
-
-        <!-- Kanan Belakang -->
-        <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="40 0 30" rotation="0 -90 0"></a-entity>
-
-
-        <!-- Kamera Keliling Lapangan -->
-        <a-entity id="cameraRig" position="0 10 0" rotation="0 0 0"
-        animation="property: rotation; to: 0 360 0; dur: 20000; easing: linear; loop: true">
-        <a-camera wasd-controls-enabled="false" look-controls-enabled="false"></a-camera>
-        </a-entity>
-
-        <a-entity gltf-model="assets/models/bola.glb" 
-                scale="0.005 0.005 0.005" 
-                position="0 0.5 0"
-                animation="property: position; to: 0 0.5 50; dur: 4000; easing: linear; loop: true"
-                sound="src: url(assets/suara/sorakan.mp3); on: animationcomplete;">
-      </a-entity>
+      <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="-40 0 -30" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="-40 0 30" rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="40 0 -30" rotation="0 -90 0"></a-entity>
+      <a-entity gltf-model="assets/models/tribun.glb" scale="0.7 0.7 0.7" position="40 0 30" rotation="0 -90 0"></a-entity>
 
       <!-- Audio Tribun -->
-      <a-sound 
-        id="suaraSuporter" 
-        src="#suporter" 
-        autoplay="true" 
-        loop="true" 
-        volume="2" 
-        position="0 2 0">
-      </a-sound>
+      <a-sound id="suaraSuporter" src="#suporter" autoplay="true" loop="true" volume="2" position="0 2 0"></a-sound>
 
       <!-- Kamera Keliling -->
-      <a-entity id="cameraRig" position="0 10 0" rotation="0 0 0"
-        animation="property: rotation; to: 0 360 0; dur: 20000; easing: linear; loop: true">
-        <a-camera wasd-controls-enabled="false" look-controls-enabled="false"></a-camera>
+      <a-entity id="userCamera" position="0 1.6 5">
+        <a-camera wasd-controls="acceleration: 15" look-controls="pointerLockEnabled: true">
+          <a-cursor fuse="false" raycaster="objects: .clickable" material="color: black; shader: flat"></a-cursor>
+        </a-camera>
       </a-entity>
-    </a-scene>
 
     <script>
         // Trik paksa autoplay setelah user gesture ringan
@@ -172,6 +143,39 @@
   
         window.addEventListener('mousemove', playAudioOnce);
         window.addEventListener('touchstart', playAudioOnce);
-      </script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+          const bola = document.querySelector('#bola');
+          const cheer = document.querySelector('#cheerSound');
+
+          bola.addEventListener('click', () => {
+            // Hapus animasi lama (kalau ada)
+            bola.removeAttribute('animation');
+
+            // Mainkan suara sorakan
+            if (cheer && cheer.components.sound) {
+              cheer.components.sound.playSound();
+            }
+
+            // Bola bergerak ke gawang
+            bola.setAttribute('animation', {
+              property: 'position',
+              to: '0 0.5 50',
+              dur: 2000,
+              easing: 'easeInOutQuad'
+            });
+
+            // Setelah 3 detik, bola kembali ke tengah
+            setTimeout(() => {
+              bola.setAttribute('animation', {
+                property: 'position',
+                to: '0 0.5 0',
+                dur: 1000,
+                easing: 'easeInOutQuad'
+              });
+            }, 3000);
+          });
+        });
+    </script>
   </body>
 </html>
